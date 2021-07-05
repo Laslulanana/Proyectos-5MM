@@ -124,7 +124,7 @@ public class MovimientoP2 : MonoBehaviour
 				Destroy(sombraHabilidadEnemigo.gameObject,1);
 			
 			}
-			tiempoControlHabilidades += Time.deltaTime;
+			else tiempoControlHabilidades += Time.deltaTime;
 
 		}
 	}
