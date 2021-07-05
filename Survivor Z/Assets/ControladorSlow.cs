@@ -8,12 +8,14 @@ public class ControladorSlow : MonoBehaviour
     WeaponController wc;
     public float tiempoSlow = 0;
     float velocidadnormal;
+    float velocidadReducida;
     // Start is called before the first frame update
     void Start()
     {
         z2 = FindObjectOfType<MovimientoP2>();
         velocidadnormal = z2.speed;
         wc = FindObjectOfType<WeaponController>();
+         velocidadReducida = z2.speed * 0.5f;
     }
 
     // Update is called once per frame
@@ -25,13 +27,15 @@ public class ControladorSlow : MonoBehaviour
     {
         if (collider.tag == "Zombie")
         {
-            if (tiempoSlow <= 5)
+            if (tiempoSlow <= 4)
             {
-                float reduccion = z2.speed * 0.5f;
-                z2.speed = reduccion;
-                tiempoSlow++;
+                z2.speed = velocidadReducida;
+
+
+                tiempoSlow += Time.deltaTime;
             }
-            tiempoSlow = 0;
+            
+
         }
 
 
