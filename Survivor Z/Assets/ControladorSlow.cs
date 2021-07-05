@@ -34,8 +34,8 @@ public class ControladorSlow : MonoBehaviour
 
                 tiempoSlow += Time.deltaTime;
             }
-            
 
+           
         }
 
 
