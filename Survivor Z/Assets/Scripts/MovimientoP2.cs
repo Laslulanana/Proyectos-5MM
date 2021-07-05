@@ -113,18 +113,23 @@ public class MovimientoP2 : MonoBehaviour
 	}
 	void Habilidades ()
     { float tiempoControlHabilidades =0;
-		float tiempoCooldownHabilidades = 15 + Time.time;
+		float tiempoCooldownHabilidades = 15;
 		if (Input.GetKeyDown(KeyCode.K) && Time.time > tiempoCooldownHabilidades)
 		{
-			Vector3 sombra = this.transform.position + Vector3.forward *10;
+			tiempoCooldownHabilidades = tiempoCooldownHabilidades + tiempoCooldownHabilidades;
+			   Vector3 sombra = this.transform.position + Vector3.right + new Vector3(5,0,0);
 			Instantiate(sombraHabilidadEnemigo , sombra , this.transform.rotation);
+			if (tiempoControlHabilidades < 3)
+			{
+				tiempoControlHabilidades += Time.deltaTime;
+			}
 			if (tiempoControlHabilidades >= 3)
 
             { this.transform.position = sombraHabilidadEnemigo.transform.position;
 				Destroy(sombraHabilidadEnemigo.gameObject,1);
 			
 			}
-			else tiempoControlHabilidades += Time.deltaTime;
+			
 
 		}
 	}

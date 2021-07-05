@@ -57,7 +57,7 @@ public class Granadas : MonoBehaviour
             var particulasClon = Instantiate(particulasVeneno, this.transform.position, this.transform.rotation);
             Destroy(particulasClon, 4f);
             Destroy(this.gameObject,4f);
-            z2.speed = velocidadnormal;
+            
             
         }
     }
